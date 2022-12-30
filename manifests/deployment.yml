@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "myazurekuberneties-9b37"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "myazurekuberneties-9b37"
+  template:
+    metadata:
+      labels:
+        app: "myazurekuberneties-9b37"
+    spec:
+      containers:
+        - name: "myazurekuberneties-9b37"
+          image: "newmanu.azurecr.io/myazurekuberneties"
+          ports:
+          - containerPort: 80
