@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "myazurekuberneties-ee96"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "myazurekuberneties-ee96"
+  template:
+    metadata:
+      labels:
+        app: "myazurekuberneties-ee96"
+    spec:
+      containers:
+        - name: "myazurekuberneties-ee96"
+          image: "newmanuone.azurecr.io/myazurekuberneties"
+          ports:
+          - containerPort: 80
